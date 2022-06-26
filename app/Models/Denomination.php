@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Denomination extends Model
 {
     use HasFactory;
+
+    protected $illable = [
+        'type',
+        'value',
+        'image'
+    ];
 }

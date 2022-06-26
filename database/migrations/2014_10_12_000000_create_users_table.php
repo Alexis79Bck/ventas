@@ -18,10 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('fullname');
             $table->string('phone');
             $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('username')->unique();
             $table->string('password');
+            $table->enum('profile', ['ADMIN', 'EMPLOYEE'])->default('ADMIN');
             $table->enum('status', ['ACTIVE', 'SUSPENDED', 'LOCKED'])->default('ACTIVE');
-            $table->string('image', 55)->nullable();
+            $table->string('image', 50)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

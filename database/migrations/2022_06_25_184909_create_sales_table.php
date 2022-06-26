@@ -19,7 +19,7 @@ class CreateSalesTable extends Migration
             $table->integer('items');
             $table->decimal('cash');
             $table->decimal('change');
-            $table->enum('status', ['PAID', 'PENDING', 'CANCELED'])->default('PENDING');
+            $table->enum('status', ['PAID', 'PENDING', 'CANCELLED'])->default('PAID');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
