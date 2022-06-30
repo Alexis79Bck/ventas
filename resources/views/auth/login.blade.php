@@ -1,4 +1,4 @@
-@extends('layouts.cork_theme.app')
+@extends('layouts.matrix_theme.app')
 
 @section('content')
 <div class="container">
