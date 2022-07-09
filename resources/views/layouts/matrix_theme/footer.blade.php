@@ -1,4 +1,4 @@
 <footer class="footer text-center">
-  All Rights Reserved by Matrix-admin. Designed and Developed by
-  <a href="https://www.wrappixel.com">WrapPixel</a>.
+  Copyright © 2020. Sistema de Ventas. Designed and Developed by Alexis Mata.
+  <p class="">version 1.0.0 </p>
 </footer>

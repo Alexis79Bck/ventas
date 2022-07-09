@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-
+    'theme' => env('THEME_NAME', 'cork_theme'),
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
