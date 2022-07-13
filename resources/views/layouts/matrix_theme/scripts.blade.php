@@ -20,3 +20,18 @@
 <script src="{{asset('matrix_theme/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{asset('matrix_theme/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
 <script src="{{asset('matrix_theme/dist/js/pages/chart/chart-page-init.js')}}"></script>
+
+<script>
+    function notify(msg, option = 1) {
+
+    snackbar.show({
+      text: msg.toUpperCase(),
+      actionText: 'CERRAR',
+      actionTextColor: '#fff',
+      backgroundColor: option == 1 ? '#3b3f5c' : '#e7515a',
+      pos: 'top-right'
+    });
+
+  }
+</script>
+@livewireScripts
