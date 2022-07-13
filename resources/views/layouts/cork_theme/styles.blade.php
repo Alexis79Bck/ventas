@@ -28,6 +28,24 @@
     border-color: #3b3f5c;
   }
 
-</style>
+  @media (max-width: 480px) {
 
+    .mtmobile {
+      margin-bottom: 20px!important;
+    }
+
+    .mbmobile {
+      margin-bottom: 10px!important;
+    }
+
+    .hideonsm {
+      display: none!important;
+    }
+
+    .inblock {
+      display: block;
+    }
+  }
+</style>
+@livewireStyles
 <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->

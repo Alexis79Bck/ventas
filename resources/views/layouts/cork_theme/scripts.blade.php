@@ -35,6 +35,7 @@
 
   }
 </script>
+@livewireScripts
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS 
 <script src="{{ asset('cork_theme/plugins/apex/apexcharts.min.js')}}"></script>
 <script src="{{ asset('cork_theme/assets/js/dashboard/dash_2.js')}}"></script>
