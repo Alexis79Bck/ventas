@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Category;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
 
 
 
@@ -17,29 +17,30 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+        $faker = new Faker;
 
         Category::create([
-           'name' => $this->faker->words(3),
+           'name' => $faker->words(3, true),
            'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
         ]);
         Category::create([
-           'name' => $this->faker->words(3),
+           'name' => $faker->words(3, true),
            'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
         ]);
         Category::create([
-           'name' => $this->faker->words(3),
+           'name' => $faker->words(3, true),
            'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
         ]);
         Category::create([
-           'name' => $this->faker->words(3),
+           'name' => $faker->words(3, true),
            'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
         ]);
         Category::create([
-           'name' => $this->faker->words(3),
+           'name' => $faker->words(3, true),
            'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
         ]);
         Category::create([
-           'name' => $this->faker->words(3),
+           'name' => $faker->words(3, true),
            'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
         ]);
     }
