@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Category;
-use Faker\Generator as Faker;
-
+use App\Models\Category; 
 
 
 class CategorySeeder extends Seeder
@@ -17,31 +15,12 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $faker = new Faker;
 
-        Category::create([
-           'name' => $faker->words(3, true),
-           'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
-        ]);
-        Category::create([
-           'name' => $faker->words(3, true),
-           'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
-        ]);
-        Category::create([
-           'name' => $faker->words(3, true),
-           'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
-        ]);
-        Category::create([
-           'name' => $faker->words(3, true),
-           'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
-        ]);
-        Category::create([
-           'name' => $faker->words(3, true),
-           'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
-        ]);
-        Category::create([
-           'name' => $faker->words(3, true),
-           'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
-        ]);
+      Category::factory()->count(7)->create();
+      //   Category::create([
+      //      'name' => $faker->words(3, true),
+      //      'image' => 'https://dummyimage.com/220/f7ffd6/ffffff.png'
+      //   ]);
+        
     }
 }
