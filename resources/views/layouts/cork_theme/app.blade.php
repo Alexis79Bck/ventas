@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>{{ config('app.name') }} </title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('imgs/' . config('app.logo_image'))}}" />
 
 
 
@@ -24,37 +24,53 @@
         </div>
     </div>
     <!--  END LOADER -->
+    {{-- <div class="container-fluid"> --}}
 
-    <!--  BEGIN NAVBAR  -->
-    @include('layouts.cork_theme.navbar')
-    <!--  END NAVBAR  -->
+            <!--  BEGIN NAVBAR  -->
+            @include('layouts.cork_theme.navbar')
+            <!--  END NAVBAR  -->
 
-    <!--  BEGIN TOPBAR-->
-    @include('layouts.cork_theme.topbar')
-    <!--   END TOPBAR  -->
-
-    <!--  BEGIN MAIN CONTAINER  -->
-    <div class="main1-container" id="container">
-
-        <div class="overlay"></div>
-        <div class="search-overlay"></div>
+            @auth
+                <!--  BEGIN TOPBAR-->
+                @include('layouts.cork_theme.topbar')
+                <!--   END TOPBAR  -->
+            @endauth
 
 
 
-        <!--  BEGIN CONTENT PART  -->
-        <div id="content" class="main-content  ">
-            <div class="layout-px-spacing">
+        <div class="main-container" id="container">
 
-                @yield('content')
+
+
+            <div class="overlay"></div>
+            <div class="search-overlay"></div>
+
+
+
+            <!--  BEGIN CONTENT PART  -->
+            <div id="content" class="main-content mt-offset-3 ">
+                <div class="layout-px-spacing">
+
+                    @yield('content')
+
+                </div>
+
+
+
+                @include('layouts.cork_theme.footer')
 
             </div>
 
 
 
-            @include('layouts.cork_theme.footer')
-
         </div>
-    </div>
+    {{-- </div> --}}
+
+
+
+
+    <!--  BEGIN MAIN CONTAINER  -->
+
     <!--  END CONTENT PART  -->
 
     </div>

@@ -10,10 +10,10 @@
 */
 html { min-height: 100% }
 body {
-    color: #888ea8;
+    color: #000d46;
     height: 100%;
     font-size: 0.875rem;
-    background: #060818;
+    background: #eef0ff;
     overflow-x: hidden;
     overflow-y: auto;
     letter-spacing: 0.0312rem;
@@ -59,7 +59,7 @@ code { color: #e7515a; }
     justify-content: flex-start;
 
 }
-#container.fixed-header { margin-top: 56px; }
+#container.fixed-header { margin-top: 78px; }
 #content {
     margin-top: 0;
     max-width: 100%;
@@ -71,7 +71,7 @@ code { color: #e7515a; }
     border-bottom-left-radius: 6px;
     max-width: 1600px;
     margin: 0 auto;
-    margin-top: 128px;
+    margin-top: 164px;
 }
 .main-container-fluid > .main-content > .container {
     float: left;
@@ -153,15 +153,15 @@ code { color: #e7515a; }
 .layout-px-spacing {
     padding: 0 39px!important;
 }
-/* 
+/*
 =====================
     Navigation Bar
 =====================
 */
 
 .header-container {
-    max-height: 64px;
-    background: #060818;
+    max-height: 56px;
+    background: #000d46;
     position: fixed;
     top: 0;
     right: 0;
@@ -171,14 +171,14 @@ code { color: #e7515a; }
 .header-container .header {
     max-width: 1600px;
     margin: 0 auto;
-    padding: 12px 32px 12px 32px;
+    padding: 8px 24px 8px 24px;
     max-height: 64px;
 }
 .navbar {
     z-index: 1030;
     padding: 12px 0 12px 0;
     background: transparent;
-    margin: 0 32px;
+    /* margin: 0 28px; */
 }
 .navbar.expand-header {
     margin: 0
@@ -290,7 +290,7 @@ code { color: #e7515a; }
 .navbar .navbar-item .nav-item.dropdown.message-dropdown .nav-link {
     position: relative;
 }
-.navbar .language-dropdown { 
+.navbar .language-dropdown {
     align-self: center;
     margin-right: 20px;
 }
@@ -456,8 +456,10 @@ code { color: #e7515a; }
     font-weight: 600;
 }
 .navbar .navbar-item .nav-item.dropdown.message-dropdown .dropdown-menu .media img {
-    width: 40px;
-    height: 40px;
+    /* width: 40px;
+    height: 40px; */
+    width: 80px;
+    height: 80px;
     margin-right: 11px;
 }
 .navbar .navbar-item .nav-item.dropdown.message-dropdown .dropdown-menu .media .media-body h5.usr-name {
@@ -529,11 +531,11 @@ code { color: #e7515a; }
     margin-right: 9px;
     align-self: center;
 }
-.navbar .navbar-item .nav-item.dropdown.notification-dropdown .dropdown-menu .media.file-upload svg { 
+.navbar .navbar-item .nav-item.dropdown.notification-dropdown .dropdown-menu .media.file-upload svg {
     color: #e7515a;
     fill: rgba(231, 81, 90, 0.23921568627450981);
 }
-.navbar .navbar-item .nav-item.dropdown.notification-dropdown .dropdown-menu .media.server-log svg { 
+.navbar .navbar-item .nav-item.dropdown.notification-dropdown .dropdown-menu .media.server-log svg {
     color: #009688;
     fill: rgba(0, 150, 136, 0.3686274509803922);
 }
@@ -817,7 +819,7 @@ code { color: #e7515a; }
         height: 18px;
         stroke-width: 1.8;
     }
-    
+
 
 
 .animated{-webkit-animation-duration:0.5s;animation-duration:0.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
@@ -926,7 +928,7 @@ code { color: #e7515a; }
 /*
     ====================
         More Dropdown
-    ====================    
+    ====================
 */
 .page-header .custom-dropdown-icon a.dropdown-toggle {
     position: relative;
@@ -944,7 +946,7 @@ code { color: #e7515a; }
     box-shadow: none;
     font-weight: 600;
     letter-spacing: 0px;
-    
+
 }
 .page-header .custom-dropdown-icon a.dropdown-toggle span span {
     color: #888ea8;
@@ -1136,10 +1138,10 @@ code { color: #e7515a; }
         width: 100%;
         top: 0;
         margin: 0;
-        background: #191e3a;
+        background: #2f3e96;
         min-height: 53px;
         position: fixed;
-        top: 64px;
+        top: 54px;
         right: 0;
         left: 0;
         z-index: 1030;
@@ -1149,20 +1151,23 @@ code { color: #e7515a; }
     }
     .topbar-nav.header #topbar {
         background: transparent;
-        padding: 0 32px;
+        padding: 0 0px;
         width: 100%;
-        min-height: 51px;
+        min-height: 68px;
         max-width: 1600px;
         margin: 0 auto;
     }
     .topbar-nav.header nav#topbar ul.menu-categories {
         display: flex;
+        align-items: center;
+        justify-content: center;
         margin-bottom: 0;
         margin-left: 5px;
+        margin-right: 5px;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu {
         position: relative;
-        padding: 11px 0 11px 0;
+        padding: 7px 0 7px 0;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu:first-child > a > div span {
         vertical-align: text-top;
@@ -1183,7 +1188,7 @@ code { color: #e7515a; }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu:hover > a svg.feather.feather-chevron-down {
         color: #61b6cd;
     }
-         
+
     .topbar-nav.header nav#topbar ul.menu-categories li.menu > a > div {
         align-self: center;
         margin-right: 6px;
@@ -1417,9 +1422,9 @@ code { color: #e7515a; }
     .header-container .header {
         max-width: 1600px;
         margin: 0 auto;
-        padding: 12px 17px 12px 17px;
+        padding: 8px 24px 8px 24px;
         max-height: 64px;
-        background: #0e1726;
+        background: #000d46;
         -webkit-box-shadow: 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%), 0 3px 5px -1px rgb(0 0 0 / 20%);
         -moz-box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
         box-shadow: 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%), 0 3px 5px -1px rgb(0 0 0 / 20%);
@@ -1547,7 +1552,7 @@ code { color: #e7515a; }
         position: relative;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu .submenu li.active a { color: #607d8b; }
-    .topbar-nav.header nav#topbar ul.menu-categories li.menu.active a[aria-expanded="false"] > div svg:not(.feather-chevron-down), 
+    .topbar-nav.header nav#topbar ul.menu-categories li.menu.active a[aria-expanded="false"] > div svg:not(.feather-chevron-down),
     .topbar-nav.header nav#topbar ul.menu-categories li.menu.active a[aria-expanded="true"] > div svg:not(.feather-chevron-down) {
         color: #fff;
         stroke-width: 2px;

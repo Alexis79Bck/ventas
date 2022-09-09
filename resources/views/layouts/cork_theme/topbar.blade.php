@@ -1,12 +1,12 @@
-<div class="mb-3 topbar-nav header navbar" role="banner">
+<div class="topbar-nav header navbar" role="banner">
 
     <nav id="topbar">
-        <ul class="menu-categories" id="topAccordion">
+        <ul class="menu-categories list-unstyled" id="topAccordion">
             <li class="menu single-menu active">
                 <a href="" class="menu-toggle" data-active="true">
                     <div class="base-menu text-center">
                         <div class="base-icons">
-                            <i class="fas fa-home fa-sm"></i>
+                            <i class="fas fa-clipboard-list fa-sm"></i>
                         </div>
                         <span>HOME</span>
                     </div>
@@ -17,7 +17,7 @@
                 <a href="" class="menu-toggle" data-active="false">
                     <div class="base-menu text-center">
                         <div class="base-icons">
-                            <i class="fas fa-border-all"></i>
+                            <i class="fas fa-tag"></i>
                         </div>
                         <span>CATEGORIAS</span>
                     </div>
@@ -28,7 +28,7 @@
                 <a href="" class="menu-toggle" data-active="false">
                     <div class="base-menu">
                         <div class="base-icons text-center">
-                            <i class="fas fa-tag"></i>
+                            <i class="fas fa-shopping-cart"></i>
                         </div>
                         <span>PRODUCTOS</span>
                     </div>
@@ -39,7 +39,7 @@
                 <a href="" class="menu-toggle" data-active="false">
                     <div class="base-menu">
                         <div class="base-icons text-center">
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-cash-register"></i>
                         </div>
                         <span>VENTAS</span>
                     </div>

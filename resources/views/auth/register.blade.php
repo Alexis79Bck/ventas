@@ -4,15 +4,16 @@
 <div class=" container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="mt-3 card">
-                <div class="card-header h4 bg-primary text-light text-center">{{ __('Registrar') }}</div>
+
+            <div class="mt-n3 card" style="background-color: #eef0ff">
+                <div class="card-header text-light text-center h4" style="background-color: #2f3e96">{{ __('Registrar') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="fullname" class="col-md-4 col-form-label text-md-end">{{ __('Fullname') }}</label>
+                            <label for="fullname" class="col-md-4 col-form-label text-md-end" style="color: #2f3e96">{{ __('Fullname') }}</label>
 
                             <div class="col-md-6">
                                 <input id="fullname" type="text" class="form-control @error('fullname') is-invalid @enderror" name="fullname" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
@@ -26,7 +27,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
+                            <label for="phone" class="col-md-4 col-form-label text-md-end" style="color: #2f3e96">{{ __('Phone') }}</label>
 
                             <div class="col-md-6">
                                 <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone"
@@ -41,7 +42,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
+                            <label for="username" class="col-md-4 col-form-label text-md-end" style="color: #2f3e96">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
                                 <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username"
@@ -56,7 +57,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end" style="color: #2f3e96">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -70,7 +71,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end" style="color: #2f3e96">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -84,7 +85,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end" style="color: #2f3e96">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">

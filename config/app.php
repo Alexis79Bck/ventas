@@ -12,9 +12,23 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-    'theme' => env('THEME_NAME', 'cork_theme'),
-    'name' => env('APP_NAME', 'Laravel'),
+        'name' => env('APP_NAME', 'Laravel'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Variables Personalizadas
+    |--------------------------------------------------------------------------
+    |
+    | Aquí se encontraran las variables creadas por mi para mayor personalización:
+    |    - theme = Nombre del tema que se desea utilizar «Matrix o Cork»
+    |          Cualquiera de esos nombres representan la carpeta del scaffolding a usar
+    |    - logo_image = Nombre de la imagen del logo que se utilizará
+    |    - logo_text = Nombre de la imagen del logo texto que se utilizará
+    |
+    */
+    'theme' => env('THEME_NAME', 'cork_theme'),
+    'logo_image' => env('LOGO_IMAGE', 'logo-default.png'),
+    'logo_text' => env('LOGO_TEXT', 'logo-text-default.png'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -174,7 +188,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\TelescopeServiceProvider::class,
+        //App\Providers\TelescopeServiceProvider::class,
 
     ],
 

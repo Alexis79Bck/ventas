@@ -6,14 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords"
-    content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template" />
-  <meta name="description"
-    content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework" />
-  <meta name="robots" content="noindex,nofollow" />
+
   <title>{{config('app.name')}}</title>
   <!-- Favicon icon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
+  <link rel="icon" type="image/x-icon" href="{{ asset('imgs/' . config('app.logo_image'))}}" />
   @include('layouts.matrix_theme.styles')
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,26 +36,44 @@
     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
 
     @include('layouts.matrix_theme.topbar')
+    @auth
+        @include('layouts.matrix_theme.sidebar')
+        <div class="page-wrapper">
 
-    @include('layouts.matrix_theme.sidebar')
+            @include('layouts.matrix_theme.breadcrumb')
+
+
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                @yield('content')
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+
+            @include('layouts.matrix_theme.footer')
+
+        </div>
+    @else
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid mt-3">
+            @yield('content')
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+
+        @include('layouts.matrix_theme.footer')
+    @endauth
+
     <!-- ============================================================== -->
     <!-- Page wrapper  -->
     <!-- ============================================================== -->
-    <div class="page-wrapper">
-      @include('layouts.matrix_theme.breadcrumb')
-      <!-- ============================================================== -->
-      <!-- Container fluid  -->
-      <!-- ============================================================== -->
-      <div class="container-fluid">
-        @yield('content')
-      </div>
-      <!-- ============================================================== -->
-      <!-- End Container fluid  -->
-      <!-- ============================================================== -->
-      
-      @include('layouts.matrix_theme.footer')
-      
-    </div>
+
     <!-- ============================================================== -->
     <!-- End Page wrapper  -->
     <!-- ============================================================== -->
