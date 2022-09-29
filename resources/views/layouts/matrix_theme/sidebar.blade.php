@@ -1,7 +1,7 @@
 <!-- ============================================================== -->
 <!-- Left Sidebar - style you can find in sidebar.scss  -->
 <!-- ============================================================== -->
-<aside class="left-sidebar bg-dark" data-sidebarbg="skin5">
+<aside class="left-sidebar" data-sidebarbg="skin5">
   <!-- Sidebar scroll-->
   <div class="scroll-sidebar">
     <!-- Sidebar navigation-->
@@ -51,10 +51,7 @@
             <a class="sidebar-link sidebar-link waves-effect waves-dark" href="#" aria-expanded="false">
             <i class="mdi mdi-printer"></i><span class="hide-menu">REPORTES </span></a>
         </li>
-        <li class="sidebar-item">
-            <a class="sidebar-link sidebar-link waves-effect waves-dark" href="#" aria-expanded="false">
-                
-        </li>
+
 
       </ul>
     </nav>

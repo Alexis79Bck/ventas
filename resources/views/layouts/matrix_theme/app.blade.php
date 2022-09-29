@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -40,8 +41,8 @@
         @include('layouts.matrix_theme.sidebar')
         <div class="page-wrapper">
 
-            @include('layouts.matrix_theme.breadcrumb')
-
+            {{-- @include('layouts.matrix_theme.breadcrumb') --}}
+            {{-- @include('livewire.matrix_theme.init') --}}
 
             <!-- ============================================================== -->
             <!-- Container fluid  -->

@@ -34,6 +34,7 @@
                 <!--  BEGIN TOPBAR-->
                 @include('layouts.cork_theme.topbar')
                 <!--   END TOPBAR  -->
+
             @endauth
 
 
@@ -48,9 +49,11 @@
 
 
             <!--  BEGIN CONTENT PART  -->
-            <div id="content" class="main-content mt-offset-3 ">
-                <div class="layout-px-spacing">
 
+            <div id="content" class="main-content mt-offset-3 ">
+
+                <div class="layout-px-spacing">
+                    
                     @yield('content')
 
                 </div>
