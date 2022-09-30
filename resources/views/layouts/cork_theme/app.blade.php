@@ -53,7 +53,7 @@
             <div id="content" class="main-content mt-offset-3 ">
 
                 <div class="layout-px-spacing">
-                    
+
                     @yield('content')
 
                 </div>

@@ -45,13 +45,13 @@
             {{-- @include('livewire.matrix_theme.init') --}}
 
             <!-- ============================================================== -->
-            <!-- Container fluid  -->
+            <!-- Container fluid / Content -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
-                @yield('content')
-            </div>
+
+            @yield('content')
+
             <!-- ============================================================== -->
-            <!-- End Container fluid  -->
+            <!-- End Container fluid / Content -->
             <!-- ============================================================== -->
 
             @include('layouts.matrix_theme.footer')

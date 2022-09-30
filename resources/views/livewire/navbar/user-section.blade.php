@@ -29,6 +29,17 @@
                         <i class="fas fa-address-card"></i> <span> Mi Perfil </span>
                     </a>
                 </div>
+                <div class="dropdown-item">
+                    @livewire('change-theme-option')
+                    {{-- <form action="{{route('changeTheme',['theme'=>'matrix_theme'])}}" method='POST'>
+                        @csrf
+                        <a class="dropdown-item text-white" role="button" >
+                            <i class="fas fa-person-booth me-1 ms1"></i> <span> Cambiar Tema </span>
+                        </a>
+                    </form> --}}
+                </div>
+
+
 
 
                 <div class="dropdown-item">
