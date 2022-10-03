@@ -3,7 +3,7 @@
     <nav id="topbar">
         <ul class="menu-categories list-unstyled" id="topAccordion">
             <li class="menu single-menu active">
-                <a href="" class="menu-toggle" data-active="true">
+                <a href="{{route('home')}}" class="menu-toggle" data-active="true">
                     <div class="base-menu text-center">
                         <div class="base-icons">
                             <i class="fas fa-clipboard-list fa-sm"></i>
@@ -14,7 +14,7 @@
             </li>
 
             <li class="menu single-menu ">
-                <a href="" class="menu-toggle" data-active="false">
+                <a href="{{ route('categories') }}" class="menu-toggle" data-active="false">
                     <div class="base-menu text-center">
                         <div class="base-icons">
                             <i class="fas fa-tag"></i>

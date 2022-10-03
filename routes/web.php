@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use App\http\Livewire\CorkTheme\Category\Categories as CategoriesComponent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,5 +21,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/categories', CategoriesComponent::class)->name('categories');
 

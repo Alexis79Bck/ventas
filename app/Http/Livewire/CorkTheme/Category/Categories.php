@@ -19,11 +19,18 @@ class Categories extends Component
     public $componentName;
     public $pageTitle;
     private $pagination = 10;
+
+
+    public function mount()
+    {
+        $this->componentName = 'Categorías';
+        $this->pageTitle = 'Listado';
+    }
     public function render()
     {
-        $data = Category::all();
-        return view('livewire.cork_theme.category.categories', compact('data'))
-        ->extends('layouts.cork_theme.app')
+        $categories = Category::all();
+        return view('livewire.cork-theme.category.categories', compact('categories'))
+        ->extends('layouts.cork-theme.app')
         ->section('content');
     }
 }

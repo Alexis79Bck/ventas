@@ -26,7 +26,7 @@ return [
     |    - logo_text = Nombre de la imagen del logo texto que se utilizará
     |
     */
-    'theme' => env('THEME_NAME', 'cork_theme'),
+    'theme' => env('THEME_NAME', 'cork-theme'),
     'logo_image' => env('LOGO_IMAGE', 'logo-default.png'),
     'logo_text' => env('LOGO_TEXT', 'logo-text-default.png'),
     /*

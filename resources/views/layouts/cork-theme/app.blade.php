@@ -10,7 +10,7 @@
 
 
 
-    @include('layouts.cork_theme.styles')
+    @include('layouts.cork-theme.styles')
 
 </head>
 
@@ -27,12 +27,12 @@
     {{-- <div class="container-fluid"> --}}
 
             <!--  BEGIN NAVBAR  -->
-            @include('layouts.cork_theme.navbar')
+            @include('layouts.cork-theme.navbar')
             <!--  END NAVBAR  -->
 
             @auth
                 <!--  BEGIN TOPBAR-->
-                @include('layouts.cork_theme.topbar')
+                @include('layouts.cork-theme.topbar')
                 <!--   END TOPBAR  -->
 
             @endauth
@@ -53,14 +53,14 @@
             <div id="content" class="main-content mt-offset-3 ">
 
                 <div class="layout-px-spacing">
-
+                    
                     @yield('content')
 
                 </div>
 
 
 
-                @include('layouts.cork_theme.footer')
+                @include('layouts.cork-theme.footer')
 
             </div>
 
@@ -79,7 +79,7 @@
     </div>
     <!-- END MAIN CONTAINER -->
 
-    @include('layouts.cork_theme.scripts')
+    @include('layouts.cork-theme.scripts')
 </body>
 
 </html>

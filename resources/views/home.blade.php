@@ -1,8 +1,9 @@
 @extends('layouts.' .config('app.theme') . '.app')
 
+
+
 @section('content')
-@include('livewire.' .config('app.theme') . '.init')
-{{-- <div class="container-fluid">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="text-center">
@@ -10,5 +11,5 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 @endsection

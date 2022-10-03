@@ -1,4 +1,4 @@
-<div class="modal fade" tabindex="-1" wire:ignore.self>
+<div class="modal fade" tabindex="-1" wire:ignore.self id="modal{{$componentName}}">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
