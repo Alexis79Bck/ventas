@@ -7,7 +7,7 @@
             </span>
             <div class="ms-auto text-end">
 
-                <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal" data-target="#modal{{$componentName}}"><i class="fas fa-plus"></i>  Agregar</a>
+                <a href="javascript:void(0)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal{{$componentName}}"><i class="fas fa-plus"></i>  Agregar</a>
 
             </div>
 
