@@ -11,7 +11,7 @@
   <title>{{config('app.name')}}</title>
   <!-- Favicon icon -->
   <link rel="icon" type="image/x-icon" href="{{ asset('imgs/' . config('app.logo_image'))}}" />
-  @include('layouts.matrix_theme.styles')
+  @include('layouts.matrix-theme.styles')
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -36,9 +36,9 @@
   <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
 
-    @include('layouts.matrix_theme.topbar')
+    @include('layouts.matrix-theme.topbar')
     @auth
-        @include('layouts.matrix_theme.sidebar')
+        @include('layouts.matrix-theme.sidebar')
         <div class="page-wrapper">
 
             {{-- @include('layouts.matrix_theme.breadcrumb') --}}
@@ -54,7 +54,7 @@
             <!-- End Container fluid / Content -->
             <!-- ============================================================== -->
 
-            @include('layouts.matrix_theme.footer')
+            @include('layouts.matrix-theme.footer')
 
         </div>
     @else
@@ -68,7 +68,7 @@
         <!-- End Container fluid  -->
         <!-- ============================================================== -->
 
-        @include('layouts.matrix_theme.footer')
+        @include('layouts.matrix-theme.footer')
     @endauth
 
     <!-- ============================================================== -->
@@ -85,7 +85,7 @@
   <!-- ============================================================== -->
   <!-- All Jquery -->
   <!-- ============================================================== -->
-  @include('layouts.matrix_theme.scripts')
+  @include('layouts.matrix-theme.scripts')
 </body>
 
 </html>

@@ -90,13 +90,8 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-address-card me-1 ms1"></i> Mi Perfil</a>
-                @livewire('change-theme-option')
-                {{-- <form action="{{route('changeTheme',['theme'=>'cork_theme'])}}" method='POST'>
-                    @csrf
-                    <button class="dropdown-item " type="submit" >
-                        <i class="fas fa-person-booth me-1 ms1"></i> <span> Cambiar Tema </span>
-                    </button>
-                </form> --}}
+                {{-- @livewire('change-theme-option') --}}
+               
                 <hr class="text-dark" height="1.5px"/>
 
                 <a href="{{route('logout')}}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

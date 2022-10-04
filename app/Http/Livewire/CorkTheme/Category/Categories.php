@@ -26,9 +26,19 @@ class Categories extends Component
         $this->componentName = 'Categorías';
         $this->pageTitle = 'Listado';
     }
+
+    public function paginationView()
+    {
+        return 'vendor.livewire.bootstrap';
+    }
     public function render()
     {
-        $categories = Category::all();
+        if (strlen($this->search) > 0) {
+            $categories = Category::search($this->search)->paginate($this->pagination);
+        }else{
+            $categories = Category::orderBy('id','desc')->paginate($this->pagination);
+        }
+
         return view('livewire.cork-theme.category.categories', compact('categories'))
         ->extends('layouts.cork-theme.app')
         ->section('content');

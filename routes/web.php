@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\http\Livewire\CorkTheme\Category\Categories as CategoriesComponent;
+use App\Http\Controllers\HomeController;
+use App\http\Livewire\CorkTheme\Category\Categories as CorkThemeCategoriesComponent;
+use App\http\Livewire\MatrixTheme\Category\Categories as MatrixThemeCategoriesComponent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/categories', CategoriesComponent::class)->name('categories');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+if (config('app.theme') == 'cork-theme') {
+    Route::get('/categories', CorkThemeCategoriesComponent::class)->name('categories');
+}else{
+    
+    Route::get('/categories', MatrixThemeCategoriesComponent::class)->name('categories');
+}
+
 

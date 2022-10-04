@@ -14,7 +14,7 @@
             </div>
 
         </div>
-        <div class="widget-heading" >Buscar...</div>
+        @include('common.searchbox')
 
     </div>
 
@@ -50,14 +50,14 @@
                     </td>
                 </tr>
                 @empty
-                <tr id="row-{{$row->id}} ">
+                <tr >
                     <td colspan="4"><span class="h5"> No existe registro.</span></td>
                 </tr>
                 @endforelse
 
             </tbody>
         </table>
-        Pagination
+        {{$categories->links()}}
     </div>
     @include('livewire.cork-theme.category.form')
 </div>
