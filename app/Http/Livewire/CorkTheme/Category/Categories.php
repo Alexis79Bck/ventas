@@ -31,6 +31,17 @@ class Categories extends Component
     {
         return 'vendor.livewire.bootstrap';
     }
+
+    public function edit($id)
+    {
+        $record = Category::find($id);
+        $this->selectedId = $record->id;
+        $this->name = $record->name;
+        $this->image = null;
+
+        $this->emit('show-modal', 'Editar');
+
+    }
     public function render()
     {
         if (strlen($this->search) > 0) {

@@ -58,11 +58,12 @@
         </div>
         @include('livewire.matrix-theme.category.form')
     </div>
-</div>
+
 <script >
     document.addEventListener('DOMContentLoaded', function()  {
         window.livewire.on('show-modal', msg => {
-            $('#theModal').modal('show')
+             
+            $('#modal' + msg).modal('show')
         })
         window.livewire.on('cateory-added', msg => {
             $('#theModal').modal('hide')
@@ -117,3 +118,4 @@
     };
 </script>
 
+</div>
