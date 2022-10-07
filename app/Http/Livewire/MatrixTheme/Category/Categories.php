@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\MatrixTheme\Category;
 
+use App\Http\Traits\FormFields;
 use Livewire\Component;
 use App\Models\Category;
 use Livewire\WithFileUploads;
@@ -9,7 +10,7 @@ use Livewire\WithPagination;
 use Illuminate\Support\Facades\Storage;
 class Categories extends Component
 {
-    use WithFileUploads, WithPagination;
+    use WithFileUploads, WithPagination, FormFields;
 
     public $name;
     public $image;
@@ -30,11 +31,36 @@ class Categories extends Component
     {
         return 'vendor.livewire.bootstrap';
     }
+    public function resetUI()
+    {
+
+    }
+
+    public function store()
+    {
+        $rules =[
+            'name'=>'required|unique:categories|min:3'
+        ];
+
+        $messages = [
+            'name.required' => 'El campo nombre es requerido.',
+            'name.unique' => 'Este nombre ya existe.',
+            'name.min' => 'El nombre debe ser de al menos 3 caracteres.',
+        ];
+
+        $this->validate($rules, $messages);
+
+        $category = Category::create([
+            'name'=> $this->name
+        ]);
+
+        dd($category);
+    }
 
     public function edit($id)
     {
 
-        $record = Category::find($id);
+        $record = Category::find($id, ['id','name','image']);
         $this->selectedId = $record->id;
         $this->name = $record->name;
         $this->image = $record->image;
