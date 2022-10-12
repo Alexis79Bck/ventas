@@ -62,18 +62,13 @@
 <script >
     document.addEventListener('DOMContentLoaded', function()  {
         window.livewire.on('show-modal', msg => {
-             
+
             $('#modal' + msg).modal('show')
         })
-        window.livewire.on('cateory-added', msg => {
-            $('#theModal').modal('hide')
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: msg,
-                showConfirmButton: false,
-                timer: 2000
-            })
+        window.livewire.on('hide-modal', msg => {
+
+            $('#modal' + msg[0]).modal('hide')
+            toastr['sucess'](msg[1], msg[0])
         })
         window.livewire.on('category-updated', msg => {
             $('#theModal').modal('hide')

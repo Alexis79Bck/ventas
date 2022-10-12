@@ -1,4 +1,5 @@
 <script src="{{asset('matrix_theme/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+
 <!-- Bootstrap tether Core JavaScript -->
 <script src="{{asset('matrix_theme/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('matrix_theme/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
@@ -20,8 +21,8 @@
 <script src="{{asset('matrix_theme/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{asset('matrix_theme/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
 <script src="{{asset('matrix_theme/dist/js/pages/chart/chart-page-init.js')}}"></script>
-
-<script>
+<script src="{{asset('matrix_theme/assets/libs/toastr/toastr.min.js')}}"></script>
+{{-- <script>
     function notify(msg, option = 1) {
 
     snackbar.show({
@@ -33,5 +34,5 @@
     });
 
   }
-</script>
+</script> --}}
 @livewireScripts

@@ -33,7 +33,10 @@ class Categories extends Component
     }
     public function resetUI()
     {
-
+        $this->name = "";
+        $this->image = null;
+        $this->search = "";
+        $this->selectedId = 0;
     }
 
     public function store()
@@ -54,8 +57,20 @@ class Categories extends Component
             'name'=> $this->name
         ]);
 
-        dd($category);
+
+        if ($this->image) {
+            $customFileName = uniqid() . '_.' . $this->image->extension();
+            $this->image->storeAs('public/categories', $customFileName);
+            $category->image = $customFileName;
+            $category->save();
+        }
+
+        $this->resetUI();
+        $this->emit('hide-modal',[$this->componentName,'Categoría Registrada']);
+
+
     }
+
 
     public function edit($id)
     {
@@ -67,6 +82,63 @@ class Categories extends Component
 
         $this->emit('show-modal', $this->componentName);
     }
+    public function update()
+    {
+        $rules =[
+            'name'=>"required|unique:categories,name,{$this->selectedId}|min:3"
+        ];
+
+        $messages = [
+            'name.required' => 'El campo nombre es requerido.',
+            'name.unique' => 'Este nombre ya existe.',
+            'name.min' => 'El nombre debe ser de al menos 3 caracteres.',
+        ];
+
+        $this->validate($rules, $messages);
+
+        $category = Category::find($this->selectedId);
+        $category->update([
+            'name'=>$this->name
+        ]);
+
+        if ($this->image) {
+            $customFileName = uniqid() . '_.' . $this->image->extension();
+            $this->image->storeAs('public/categories', $customFileName);
+            $oldImageName = $category->image;
+
+            $category->image = $customFileName;
+
+            $category->save();
+
+            if ($oldImageName != null){
+                if (file_exists('storage/categories/' . $oldImageName))
+                {
+                    unlink('storage/categories/' . $oldImageName);
+                }
+            }
+
+        }
+
+        $this->resetUI();
+        $this->emit('hide-modal',[$this->componentName,'Categoría Actualizada']);
+
+
+    }
+
+    public function destroy($id)
+    {
+        $category = Category::find($id);
+        $oldImageName = $category->image;
+        $category->delete();
+        if ($oldImageName != null){
+
+            unlink('storage/categories/' . $oldImageName);
+
+        }
+        $this->resetUI();
+        $this->emit('category-deleted','Categoría Eliminada');
+    }
+
     public function render()
     {
         if (strlen($this->search) > 0) {

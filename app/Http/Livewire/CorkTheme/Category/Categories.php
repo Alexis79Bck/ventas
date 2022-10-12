@@ -32,6 +32,46 @@ class Categories extends Component
         return 'vendor.livewire.bootstrap';
     }
 
+    public function resetUI()
+    {
+        $this->name = "";
+        $this->image = null;
+        $this->search = "";
+        $this->selectedId = 0;
+    }
+
+    public function store()
+    {
+        $rules =[
+            'name'=>'required|unique:categories|min:3'
+        ];
+
+        $messages = [
+            'name.required' => 'El campo nombre es requerido.',
+            'name.unique' => 'Este nombre ya existe.',
+            'name.min' => 'El nombre debe ser de al menos 3 caracteres.',
+        ];
+
+        $this->validate($rules, $messages);
+
+        $category = Category::create([
+            'name'=> $this->name
+        ]);
+
+
+        if ($this->image) {
+            $customFileName = uniqid() . '_.' . $this->image->extension();
+            $this->image->storeAs('public/categories', $customFileName);
+            $category->image = $customFileName;
+            $category->save();
+        }
+
+        $this->resetUI();
+        $this->emit('hide-modal',[$this->componentName,'Categoría Registrada']);
+
+
+    }
+
     public function edit($id)
     {
         $record = Category::find($id);
