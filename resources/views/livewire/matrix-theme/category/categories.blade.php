@@ -68,7 +68,29 @@
         window.livewire.on('hide-modal', msg => {
 
             $('#modal' + msg[0]).modal('hide')
-            toastr['sucess'](msg[1], msg[0])
+            Swal.mixin({
+                        toast: true,
+                        customClass: {
+                            poppup: 'colored-toast'
+                        },
+                        position: 'top-right',
+                        showConfirmButton: false,
+                        timer: 4500,
+                        
+                        timerProgressBar: true
+                    }).fire({
+                        icon: 'success',
+                        title: msg[1]
+                        
+                    })
+            
+            // Swal.fire({
+            //     position: 'top-right',
+            //     icon: 'success',
+            //     title: msg[1],
+            //     showConfirmButton: false,
+            //     timer: 2000
+            // })
         })
         window.livewire.on('category-updated', msg => {
             $('#theModal').modal('hide')
@@ -84,32 +106,39 @@
             $('#theModal').modal('hide')
         })
     });
-    function Confirm(id, products)
+    function Confirm(id)
     {
-        if(products > 0)
-        {
-            Swal.fire('No se puede eliminar esta categoria por que tiene productos asignados')
-            return
-        }
+        // if(products > 0)
+        // {
+        //     Swal.fire('No se puede eliminar esta categoria por que tiene productos asignados')
+        //     return
+        // }
+        
         Swal.fire({
-            title: 'Confirmar',
-            text: "¿Estas seguro de eliminar el registro?",
+            title: 'Confirmar Eliminar Registro',
+            text: "¿Estas seguro?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3B3F5C',
+            confirmButtonText: 'Aceptar',
             cancelButtonColor: '#d33',
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: 'Aceptar'
-            }).then((result) => {
-            if (result.isConfirmed) {
-                window.livewire.emit('deleteRow', id)
-                Swal.fire(
-                'Eliminado!',
-                'Categoria eliminada.',
-                'success'
-                )
-            }
-        });
+            cancelButtonText: 'Cancelar'            
+            })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    window.livewire.emit('deleteRow', id)
+                    Swal.mixin({
+                        toast: true,
+                        position: 'top-right',   
+                        showConfirmButton: false,
+                        timer: 1500,
+                        timerProgressBar: true
+                    }).fire({
+                        icon: 'success',
+                        title: 'Categoria eliminada.'
+                    }) 
+                }
+            });
     };
 </script>
 

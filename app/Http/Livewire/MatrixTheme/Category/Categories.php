@@ -6,11 +6,13 @@ use App\Http\Traits\FormFields;
 use Livewire\Component;
 use App\Models\Category;
 use Livewire\WithFileUploads;
-use Livewire\WithPagination;
+use Livewire\WithPagination; 
 use Illuminate\Support\Facades\Storage;
+
 class Categories extends Component
 {
     use WithFileUploads, WithPagination, FormFields;
+    
 
     public $name;
     public $image;
@@ -19,6 +21,7 @@ class Categories extends Component
     public $componentName;
     public $pageTitle;
     private $pagination = 10;
+    protected $listeners = ['deleteRow' => 'destroy'];
 
 
     public function mount()
@@ -66,6 +69,7 @@ class Categories extends Component
         }
 
         $this->resetUI();
+       
         $this->emit('hide-modal',[$this->componentName,'Categoría Registrada']);
 
 
@@ -136,6 +140,7 @@ class Categories extends Component
 
         }
         $this->resetUI();
+        
         $this->emit('category-deleted','Categoría Eliminada');
     }
 

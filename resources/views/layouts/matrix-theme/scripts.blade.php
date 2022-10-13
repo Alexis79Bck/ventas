@@ -21,7 +21,7 @@
 <script src="{{asset('matrix_theme/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{asset('matrix_theme/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
 <script src="{{asset('matrix_theme/dist/js/pages/chart/chart-page-init.js')}}"></script>
-<script src="{{asset('matrix_theme/assets/libs/toastr/toastr.min.js')}}"></script>
+<script src="{{asset('matrix_theme/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
 {{-- <script>
     function notify(msg, option = 1) {
 

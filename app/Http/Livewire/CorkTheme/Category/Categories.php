@@ -19,6 +19,7 @@ class Categories extends Component
     public $componentName;
     public $pageTitle;
     private $pagination = 10;
+    protected $listeners = ['deleteRow' => 'destroy'];
 
 
     public function mount()
@@ -72,16 +73,76 @@ class Categories extends Component
 
     }
 
-    public function edit($id)
+    public function edit(Category $category)
     {
-        $record = Category::find($id);
-        $this->selectedId = $record->id;
-        $this->name = $record->name;
+      
+        
+        $this->selectedId = $category->id;
+        $this->name = $category->name;
         $this->image = null;
-
-        $this->emit('show-modal', 'Editar');
+       
+        $this->emit('show-modal', $this->componentName);
 
     }
+    
+    public function update()
+    {
+        $rules =[
+            'name'=>"required|unique:categories,name,{$this->selectedId}|min:3"
+        ];
+
+        $messages = [
+            'name.required' => 'El campo nombre es requerido.',
+            'name.unique' => 'Este nombre ya existe.',
+            'name.min' => 'El nombre debe ser de al menos 3 caracteres.',
+        ];
+
+        $this->validate($rules, $messages);
+
+        $category = Category::find($this->selectedId);
+        $category->update([
+            'name'=>$this->name
+        ]);
+
+        if ($this->image) {
+            $customFileName = uniqid() . '_.' . $this->image->extension();
+            $this->image->storeAs('public/categories', $customFileName);
+            $oldImageName = $category->image;
+
+            $category->image = $customFileName;
+
+            $category->save();
+
+            if ($oldImageName != null){
+                if (file_exists('storage/categories/' . $oldImageName))
+                {
+                    unlink('storage/categories/' . $oldImageName);
+                }
+            }
+
+        }
+
+        $this->resetUI();
+        $this->emit('hide-modal',[$this->componentName,'Categoría Actualizada']);
+
+
+    }
+
+    public function destroy(Category $category)
+    {
+        
+        $oldImageName = $category->image;
+        $category->delete();
+        if ($oldImageName != null){
+
+            unlink('storage/categories/' . $oldImageName);
+
+        }
+        $this->resetUI();
+        
+        $this->emit('category-deleted','Categoría Eliminada');
+    }
+
     public function render()
     {
         if (strlen($this->search) > 0) {
