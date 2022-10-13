@@ -26,7 +26,7 @@ return [
     |    - logo_text = Nombre de la imagen del logo texto que se utilizará
     |
     */
-    'theme' => env('THEME_NAME', 'cork_theme'),
+    'theme' => env('THEME_NAME', 'cork-theme'),
     'logo_image' => env('LOGO_IMAGE', 'logo-default.png'),
     'logo_text' => env('LOGO_TEXT', 'logo-text-default.png'),
     /*
@@ -189,6 +189,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         //App\Providers\TelescopeServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
     ],
 
@@ -244,6 +245,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'SwAlert' => RealRashid\SweetAlert\Facades\Alert::class,
 
     ],
 

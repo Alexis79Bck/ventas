@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <div class="mt-n3 card" style="background-color: #eef0ff">
-                <div class="card-header text-light text-center h4" style="background-color: #2f3e96">{{ __('Registrar') }}</div>
+            <div class="mt-n3 card shadow" style="background-color: #eef0ff">
+                <div class="card-header text-light text-center h4" style="background-color: #2f3e96">{{ __('Nuevo Usuario') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

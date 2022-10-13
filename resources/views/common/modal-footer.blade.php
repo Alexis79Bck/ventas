@@ -1,6 +1,6 @@
             </div>
             <div class="modal-footer">
-                <button type="button" wire:click.prevent="resetUI()" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" wire:click.prevent="resetUI()" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
 
                 @if ($selectedId < 1)
                     <button type="button" wire:click.prevent="store()" class="btn btn-outline-success close-modal" >GUARDAR</button>

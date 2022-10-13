@@ -76,4 +76,9 @@ class RegisterController extends Controller
 
         return $user;
     }
+
+    public function showRegistrationForm()
+    {
+        return view('auth.'.config('app.theme').'.register');
+    }
 }
